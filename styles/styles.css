@@ -1,3 +1,6 @@
+    ::-webkit-scrollbar {
+    display: none; 
+    }
     @font-face {
         font-family: "fredoka";
         src: url("../assets/fonts/Fredoka/static/Fredoka-Medium.ttf");
@@ -34,12 +37,39 @@
         margin: 1rem;
     }
 
+    .subheader{
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        font-family: "fredoka-bold";
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+
     .header .yellow{
         color: #DCBF3F;
     }
 
     .header .blue{
         color: #72CFF9;
+    }
+
+    .header .lightblue{
+        color: #BCDBF9;   
+    }
+
+    .subheader .yellow{
+        color: #DCBF3F;
+    }
+
+    .subheader .blue{
+        color: #72CFF9;
+    }
+
+    .subheader .lightblue{
+        color: #BCDBF9;   
     }
 
     .content{
@@ -62,6 +92,7 @@
         height: fit-content;
         border-radius: 50px;
         padding: 2rem;
+        margin: 15px;
     }
     .grid{
         display: flex;
@@ -183,5 +214,68 @@
     .btn:hover{
         background-color: #C5A0D7;
         transform: scale(1.1);
+    }
+
+    .logs-cont{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #2B0040;
+        width: 400px;
+        max-width: 400px;
+        height: fit-content;
+        border-radius: 50px;
+        padding: 30px;
+        margin: 15px;
+    }
+
+    .terminal{
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        min-width: 100%;
+        min-height: 400px;
+        max-height: 400px;
+        overflow-y: scroll;
+        background-color: #43115B;
+        color: #48D2FE;
+        font-family: monospace;
+        font-size: large;
+        border-radius: 35px;
+        padding: 10px;
+    }   
+    .optimal-move{
+        color: greenyellow;
+    }
+
+    @media screen and (max-width: 900px){
+        .content{
+            overflow-x: scroll;
+        }
+    }
+
+    .footer{
+        margin: 20px;
+    }
+    .footer a{
+        font-family: "fredoka";
+        font-size: large;
+        color: #48D2FE;
+    }
+
+    @media screen and (max-width: 600px) {
+        body{
+            flex-direction: column;
+        }
+        .header{
+            padding: 0px;
+            margin: 0%;
+        }
+        .content{
+            flex-direction: column;
+            transform: scale(0.8);
+            margin: 0px;
+        }
     }
     
