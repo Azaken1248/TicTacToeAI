@@ -1,0 +1,187 @@
+    @font-face {
+        font-family: "fredoka";
+        src: url("../assets/fonts/Fredoka/static/Fredoka-Medium.ttf");
+    }
+    @font-face {
+        font-family: "fredoka-bold";
+        src: url("../assets/fonts/Fredoka/static/Fredoka-Bold.ttf");
+    }
+    @font-face {
+        font-family: "fredoka-medium";
+        src: url("../assets/fonts/Fredoka/static/Fredoka-SemiBold.ttf");
+    }
+    @font-face {
+        font-family: "fredoka-regular";
+        src: url("../assets/fonts/Fredoka/static/Fredoka-Regular.ttf");
+    }
+    body{
+        background-color: #5A1E76;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .header{
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        font-family: "fredoka-bold";
+        font-size: 4rem;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .header .yellow{
+        color: #DCBF3F;
+    }
+
+    .header .blue{
+        color: #72CFF9;
+    }
+
+    .content{
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;   
+    }
+
+    .game{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #2B0040;
+        min-width: 300px;
+        width: 400px;
+        max-width: 400px;
+        height: fit-content;
+        border-radius: 50px;
+        padding: 2rem;
+    }
+    .grid{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-width: 100%;
+    }
+    .info-ui{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 15px;
+        gap: 15px;
+        min-width: 100%;
+        min-height: 25%;
+    }
+
+    .x-score{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 80px;
+        min-width: 100px;
+        background-color: #48D2FE;
+        border-radius: 10px;
+    }
+
+    .draw{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 80px;
+        min-width: 100px;
+        background-color: #BCDBF9;
+        border-radius: 10px;
+    }
+
+    .y-score{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 80px;
+        min-width: 100px;
+        background-color: #E2BE00;
+        border-radius: 10px;
+    }
+
+    .card-header{
+        font-family: "fredoka";
+        font-weight: 100;   
+    }
+    .card-score{
+        padding: 2px;
+        font-size: 40px;
+        font-family: "fredoka-medium";
+    }
+    .win-label{
+        min-width: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        font-family: "fredoka-bold";
+        font-size: 2rem;
+        margin: 1rem;
+    }
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 15px;
+        margin-bottom: 7.5px;
+        margin-top: 7.5px;
+        min-width: 100%;
+        min-height: 25%;
+    }
+
+    .cell{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #43115B;
+        font-family: "fredoka-bold";
+        font-size: 5rem;
+        border-radius: 10px;
+        width: 100px;
+        height: 100px;
+        min-height: 100%;
+    }
+
+    .cell:hover{
+        background-color: #975FB1;
+    }
+
+    .control-ui{
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 23%;
+        min-height: 80px;
+    }
+
+    .btn{
+        font-family: "fredoka-bold";
+        font-size: 20px;
+        font-weight: 500;
+        padding: 10px;
+        border-radius: 10px;
+        transition: 30ms ease;
+    }
+
+    .btn:hover{
+        background-color: #C5A0D7;
+        transform: scale(1.1);
+    }
+    
