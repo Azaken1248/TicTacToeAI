@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/logos/logo.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>TicTacToeAI</title>
+</head>
+<body>
+    <div class="header">
+        <span class="yellow">Tic.</span>
+        <span class="blue">Tac.</span>
+        <span class="yellow">Toe.</span>
+    </div>
+
+    <div class="content">
+        <div id="g-board" class="game">
+            <div class="info-ui">
+                <div class="x-score">
+                    <div class="card-header">Player X</div>
+                    <div id="xscore" class="card-score">0</div>
+                </div>
+                <div class="draw">
+                    <div class="card-header">Draw</div>
+                    <div id="drawscore" class="card-score">0</div>
+                </div>
+                <div class="y-score">
+                    <div class="card-header">Player Y</div>
+                    <div id="yscore" class="card-score">0</div>
+                </div>
+            </div>
+            <div id="winner" class="win-label"></div>
+            <div id="grid" class="grid"></div>
+            <div class="control-ui">
+                <button id="rstBoard" class="btn">New Game</button>
+                <button id="rstGame" class="btn">New Match</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/mainScript.js"></script>
+</body>
+</html>
