@@ -1,4 +1,5 @@
 import { Game } from './minimax.js'; 
+import { renderGameTree } from './treeGenerator.js'; 
 
 class TicTacToeBoard {
     constructor(containerId) {
@@ -52,17 +53,23 @@ class TicTacToeBoard {
         this.turn = 1 - this.turn;  
         console.log(this.game.board); 
 
-        // AI Move Logic
+        
+
         if (this.turn === 1) {
             this.aiMove();
+            renderGameTree(this.game.board, 800, 600); 
         }
     }
 
     aiMove() {
         const optimalMove = this.game.findBestMove();
+        this.game.visualization += `\n<span class = 'optimal-move'>Choosen Move: [${optimalMove.row}, ${optimalMove.col}]</span>\n<hr>`;
         if (optimalMove.row !== -1 && optimalMove.col !== -1) {
             this.handleMove(optimalMove.row, optimalMove.col);
         }
+
+        var visualization = this.game.getVisualization();
+        document.getElementById("logs").innerHTML = `<pre class = 'move-data'>${visualization}\n</pre>`;
     }
 
     displayWinner(winner) {
@@ -72,27 +79,29 @@ class TicTacToeBoard {
         label.innerHTML = message;
 
         if (winner === 2) {
-            label.style.color = "#BCDBF9";  // Draw color
+            label.style.color = "#BCDBF9";  
             const draws = parseInt(document.getElementById("drawscore").innerHTML);
             document.getElementById("drawscore").innerHTML = draws + 1;
         } else {
-            label.style.color = winner === 0 ? "#72CFF9" : "#DCBF3F";  // X or O color
+            label.style.color = winner === 0 ? "#72CFF9" : "#DCBF3F";  
             const scoreElement = document.getElementById(winner === 0 ? "xscore" : "yscore");
             const wins = parseInt(scoreElement.innerHTML);
             scoreElement.innerHTML = wins + 1;
         }
 
-        this.lockBoard(true);  // Lock the board after the game ends
+        this.lockBoard(true);  
     }
 
     resetBoard() {
-        this.game = new Game(); // Reset the game instance
+        this.game = new Game(); 
         this.turn = 0;
         this.initBoard();
     }
 
     handleNewGame() {
         document.getElementById("winner").innerHTML = "";
+        document.getElementById("logs").innerHTML = "";
+        this.game.visualization = "";
         this.resetBoard();
     }
 
@@ -100,7 +109,9 @@ class TicTacToeBoard {
         document.getElementById("winner").innerHTML = "";
         document.getElementById("drawscore").innerHTML = "0";
         document.getElementById("xscore").innerHTML = "0";
-        document.getElementById("yscore").innerHTML = "0";  // Ensure you have yscore element in your HTML
+        document.getElementById("yscore").innerHTML = "0"; 
+        document.getElementById("logs").innerHTML = ""; 
+        this.game.visualization = "";
         this.resetBoard();
     }
 
@@ -118,7 +129,6 @@ class TicTacToeBoard {
     }
 }
 
-// Initialize the game on DOM content loaded
 document.addEventListener("DOMContentLoaded", () => {
     new TicTacToeBoard("grid");
 });
